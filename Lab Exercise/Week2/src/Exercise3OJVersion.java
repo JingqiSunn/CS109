@@ -1,4 +1,5 @@
 import java.util.Scanner;
+
 public class Exercise3OJVersion {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
@@ -9,10 +10,10 @@ public class Exercise3OJVersion {
         T = input.nextInt();
         System.out.print("The number you want to compared with: ");
         M = input.nextInt();
-        while(T -- > 0 ) {
+        while (T-- > 0) {
             n = N;
             sum = 0;
-            while (n -- > 0) {
+            while (n-- > 0) {
                 System.out.print("Please give me a number to add in: ");
                 s = input.nextInt();
                 sum += s;
