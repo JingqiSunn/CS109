@@ -15,7 +15,7 @@ public class Exercise3OJVersionWithoutNotationSentences {
                 sum += s;
             }
             difference = sum - M;
-            System.out.println(difference);
+            System.out.printf("\n%d",difference);
         }
     }
 }
