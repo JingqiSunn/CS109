@@ -3,9 +3,10 @@ import java.util.Scanner;
 public class ProblemOne {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        int upperBound, lastNumber, remaining, subTotal;
+        int upperBound, lastNumber, remaining, uppersubTotal;
         Boolean whetherCriticalPoint;
         whetherCriticalPoint = false;
+        uppersubTotal = 0;
         System.out.print("Please give us the upperbound: ");
         upperBound = input.nextInt();
         if (upperBound % 7 == 0) {
@@ -21,10 +22,10 @@ public class ProblemOne {
             }
         }
         if (whetherCriticalPoint == true) {
-            subTotal = 1;
+            uppersubTotal += 1;
         } else {
-            subTotal = 0;
+            uppersubTotal += 0;
         }
-        System.out.printf("The total number of critical numbers are %d", subTotal);
+        System.out.printf("The total number of critical numbers are %d", uppersubTotal);
     }
 }
