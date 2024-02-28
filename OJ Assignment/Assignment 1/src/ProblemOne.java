@@ -35,28 +35,33 @@ public class ProblemOne {
             upCountDown -= 1;
             whetherCriticalPoint = false;
         }
-        while (lowCountDown > 0) {
-            if (lowCountDown % 7 == 0) {
-                whetherCriticalPoint = true;
-            } else {
-                remaining = lowCountDown;
-                while (remaining > 0) {
-                    lastNumber = remaining % 10;
-                    remaining = remaining / 10;
-                    if (lastNumber == 7) {
-                        whetherCriticalPoint = true;
+        whetherCriticalPoint = false;
+        if (lowCountDown == -1) {
+            lowersubTotal = -1;
+        } else {
+            while (lowCountDown > 0) {
+                if (lowCountDown % 7 == 0) {
+                    whetherCriticalPoint = true;
+                } else {
+                    remaining = lowCountDown;
+                    while (remaining > 0) {
+                        lastNumber = remaining % 10;
+                        remaining = remaining / 10;
+                        if (lastNumber == 7) {
+                            whetherCriticalPoint = true;
+                        }
                     }
                 }
+                if (whetherCriticalPoint == true) {
+                    lowersubTotal += 1;
+                } else {
+                    lowersubTotal += 0;
+                }
+                lowCountDown -= 1;
+                whetherCriticalPoint = false;
             }
-            if (whetherCriticalPoint == true) {
-                lowersubTotal += 1;
-            } else {
-                lowersubTotal += 0;
-            }
-            upCountDown -= 1;
-            whetherCriticalPoint = false;
         }
         lowerDifference = uppersubTotal - lowersubTotal;
-        System.out.printf("The total number of critical numbers are %d", uppersubTotal);
+        System.out.printf("The total number of critical numbers are %d", lowerDifference);
     }
 }
