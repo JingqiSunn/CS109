@@ -29,6 +29,8 @@
   "keyToString": {
     "Application.FindNumberOfCriticalNumbersUnderABound.executor": "Run",
     "Application.ProblemFour.executor": "Run",
+    "Application.ProblemFourOJVersion.executor": "Run",
+    "Application.ProblemFourOJVersionWithoutNotationSentences.executor": "Run",
     "Application.ProblemOne.executor": "Run",
     "Application.ProblemOneOJVersion.executor": "Run",
     "Application.ProblemOneOJVersionWithoutNotationSentences.executor": "Run",
@@ -88,7 +90,7 @@
       <workItem from="1709119199602" duration="480000" />
       <workItem from="1709119708236" duration="2217000" />
       <workItem from="1709197709495" duration="815000" />
-      <workItem from="1709198601012" duration="3808000" />
+      <workItem from="1709198601012" duration="4560000" />
     </task>
     <servers />
   </component>
