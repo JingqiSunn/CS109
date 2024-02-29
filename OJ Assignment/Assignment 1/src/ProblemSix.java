@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class ProblemThreeOJVersionWithoutNotationSentences {
+public class ProblemSix {
     public static void main(String[] args) {
         Scanner fetch = new Scanner(System.in);
         long smallerYear, biggerYear, smallerMonth, biggerMonth, smallerDay, biggerDay, differenceInDays, testTimes;
@@ -20,24 +20,25 @@ public class ProblemThreeOJVersionWithoutNotationSentences {
 
     public static long daysBetweenYears(long littleYear, long bigYear) {
         Scanner fetch = new Scanner(System.in);
-        long smallToTheYearOfConvenience, bigToTheYearOfConvenience, littleCurrentYear, bigCurrentYear, daysBetweenYears;
-        smallToTheYearOfConvenience = 0;
-        bigToTheYearOfConvenience = 0;
-        littleCurrentYear = littleYear;
+        long bigCurrentYear,daysBetweenYears;
+        daysBetweenYears = 0;
         bigCurrentYear = bigYear;
-        while (littleCurrentYear % 13 != 1) {
-            littleCurrentYear--;
-            smallToTheYearOfConvenience++;
+        while (bigCurrentYear >(littleYear + 13)){
+            bigCurrentYear-=13;
+            daysBetweenYears += 11909;
         }
-        while (bigCurrentYear % 13 != 1) {
-            bigCurrentYear--;
-            bigToTheYearOfConvenience++;
+        while (bigCurrentYear - littleYear != 0){
+            if ((bigCurrentYear-1)%13!=0){
+                bigCurrentYear--;
+                daysBetweenYears+= 916;
+            } else {
+                bigCurrentYear--;
+                daysBetweenYears+=917;
+            }
         }
-        daysBetweenYears = (bigCurrentYear - littleCurrentYear) / 13 * 11909 - smallToTheYearOfConvenience * 916 + bigToTheYearOfConvenience * 916;
+
         return daysBetweenYears;
     }
-
-
     public static long daysInNeedToReachTheIntegralYears(long day, long month, long year) {
         Scanner fetch = new Scanner(System.in);
         long daysInNeed;
@@ -58,4 +59,4 @@ public class ProblemThreeOJVersionWithoutNotationSentences {
         }
         return daysInNeed;
     }
-}// You can see a better version in the problem six.
+}

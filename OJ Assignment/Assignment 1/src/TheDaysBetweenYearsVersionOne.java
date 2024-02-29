@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class TheDaysBetweenYears {
+public class TheDaysBetweenYearsVersionOne {
     public static void main(String[] args) {
         Scanner fetch = new Scanner(System.in);
         long littleYear, bigYear, smallToTheYearOfConvenience, bigToTheYearOfConvenience, littleCurrentYear, bigCurrentYear,daysBetweenYears;
