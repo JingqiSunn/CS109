@@ -29,6 +29,7 @@
   "keyToString": {
     "Application.FindNumberOfCriticalNumbersBetweenABound.executor": "Run",
     "Application.FindNumberOfCriticalNumbersUnderABound.executor": "Run",
+    "Application.PowerOfTen.executor": "Run",
     "Application.ProblemFive.executor": "Run",
     "Application.ProblemFiveOJVersion.executor": "Run",
     "Application.ProblemFiveOJVersionWithoutNotationWords.executor": "Run",
@@ -39,6 +40,8 @@
     "Application.ProblemOne.executor": "Run",
     "Application.ProblemOneOJVersion.executor": "Run",
     "Application.ProblemOneOJVersionWithoutNotationSentences.executor": "Run",
+    "Application.ProblemTwo.executor": "Run",
+    "Application.ProblemTwoOJVersion.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "kotlin-language-version-configured": "true",
@@ -99,6 +102,7 @@
       <workItem from="1709198601012" duration="5593000" />
       <workItem from="1709206622265" duration="434000" />
       <workItem from="1709207166043" duration="721000" />
+      <workItem from="1709208186403" duration="1900000" />
     </task>
     <servers />
   </component>
