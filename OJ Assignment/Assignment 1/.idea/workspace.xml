@@ -42,7 +42,7 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.FindNumberOfCriticalNumbersUnderABound">
+  <component name="RunManager">
     <configuration name="FindNumberOfCriticalNumbersUnderABound" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="FindNumberOfCriticalNumbersUnderABound" />
       <module name="Assignment 1" />
@@ -87,22 +87,11 @@
       <workItem from="1709119199602" duration="480000" />
       <workItem from="1709119708236" duration="2217000" />
       <workItem from="1709197709495" duration="815000" />
-      <workItem from="1709198601012" duration="1705000" />
+      <workItem from="1709198601012" duration="3176000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/FindNumberOfCriticalNumbersUnderABound.java</url>
-          <line>8</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
