@@ -46,4 +46,4 @@ public class ProblemFourOJVersionWithoutNotationSentences {
         }
         return totalCritcalNumber;
     }
-}
+}// See problem five.
