@@ -27,6 +27,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.FindNumberOfCriticalNumbersBetweenABound.executor": "Run",
     "Application.FindNumberOfCriticalNumbersUnderABound.executor": "Run",
     "Application.ProblemFour.executor": "Run",
     "Application.ProblemFourOJVersion.executor": "Run",
@@ -90,7 +91,7 @@
       <workItem from="1709119199602" duration="480000" />
       <workItem from="1709119708236" duration="2217000" />
       <workItem from="1709197709495" duration="815000" />
-      <workItem from="1709198601012" duration="4560000" />
+      <workItem from="1709198601012" duration="4821000" />
     </task>
     <servers />
   </component>
