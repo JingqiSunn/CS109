@@ -3,8 +3,8 @@ import java.util.Scanner;
 public class ProblemOneOJVersionWithoutNotationSentences {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        int upperBound, lastNumber, remaining, uppersubTotal, upCountDown, lowerbound, lowCountDown, lowersubTotal,
-                lowerDifference, testNumber;
+        long upperBound, lastNumber, upRemaining, uppersubTotal, upCountDown, lowerbound, lowCountDown, lowersubTotal,
+                lowerDifference, testNumber, lowRemaining;
         Boolean whetherCriticalPoint;
         whetherCriticalPoint = false;
         testNumber = input.nextInt();
@@ -19,12 +19,13 @@ public class ProblemOneOJVersionWithoutNotationSentences {
                 if (upCountDown % 7 == 0) {
                     whetherCriticalPoint = true;
                 } else {
-                    remaining = upCountDown;
-                    while (remaining > 0) {
-                        lastNumber = remaining % 10;
-                        remaining = remaining / 10;
+                    upRemaining = upCountDown;
+                    while (upRemaining > 0) {
+                        lastNumber = upRemaining % 10;
+                        upRemaining = upRemaining / 10;
                         if (lastNumber == 7) {
                             whetherCriticalPoint = true;
+                            break;
                         }
                     }
                 }
@@ -42,12 +43,13 @@ public class ProblemOneOJVersionWithoutNotationSentences {
                     if (lowCountDown % 7 == 0) {
                         whetherCriticalPoint = true;
                     } else {
-                        remaining = lowCountDown;
-                        while (remaining > 0) {
-                            lastNumber = remaining % 10;
-                            remaining = remaining / 10;
+                        lowRemaining = lowCountDown;
+                        while (lowRemaining > 0) {
+                            lastNumber = lowRemaining % 10;
+                            lowRemaining = lowRemaining / 10;
                             if (lastNumber == 7) {
                                 whetherCriticalPoint = true;
+                                break;
                             }
                         }
                     }
@@ -65,3 +67,4 @@ public class ProblemOneOJVersionWithoutNotationSentences {
         }
     }
 }
+//There will be another version of problem one named as problem four.
