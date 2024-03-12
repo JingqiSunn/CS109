@@ -25,43 +25,44 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.DaysInNeedToReachTheIntegralYear.executor": "Run",
-    "Application.FindNumberOfCriticalNumbersBetweenABound.executor": "Run",
-    "Application.FindNumberOfCriticalNumbersUnderABound.executor": "Run",
-    "Application.PowerOfTen.executor": "Run",
-    "Application.ProblemFive.executor": "Run",
-    "Application.ProblemFiveOJVersion.executor": "Run",
-    "Application.ProblemFiveOJVersionWithoutNotationWords.executor": "Run",
-    "Application.ProblemFiveTrash.executor": "Run",
-    "Application.ProblemFour.executor": "Run",
-    "Application.ProblemFourOJVersion.executor": "Run",
-    "Application.ProblemFourOJVersionWithoutNotationSentences.executor": "Run",
-    "Application.ProblemOne.executor": "Run",
-    "Application.ProblemOneOJVersion.executor": "Run",
-    "Application.ProblemOneOJVersionWithoutNotationSentences.executor": "Run",
-    "Application.ProblemSix.executor": "Run",
-    "Application.ProblemThree.executor": "Run",
-    "Application.ProblemThreeOJVersion.executor": "Run",
-    "Application.ProblemThreeOJVersionWithoutNotationSentences.executor": "Run",
-    "Application.ProblemTwo.executor": "Run",
-    "Application.ProblemTwoOJVersion.executor": "Run",
-    "Application.ProblemTwoOJVersionWithoutNotationSentences.executor": "Run",
-    "Application.TheDaysBetweenYears.executor": "Run",
-    "Application.TheDaysBetweenYearsVersionTwo.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.DaysInNeedToReachTheIntegralYear.executor&quot;: &quot;Run&quot;,
+    &quot;Application.FindNumberOfCriticalNumbersBetweenABound.executor&quot;: &quot;Run&quot;,
+    &quot;Application.FindNumberOfCriticalNumbersUnderABound.executor&quot;: &quot;Run&quot;,
+    &quot;Application.PowerOfTen.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ProblemFive.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ProblemFiveOJVersion.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ProblemFiveOJVersionWithoutNotationWords.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ProblemFiveTrash.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ProblemFour.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ProblemFourOJVersion.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ProblemFourOJVersionWithoutNotationSentences.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ProblemOne.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ProblemOneOJVersion.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ProblemOneOJVersionWithoutNotationSentences.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ProblemSix.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ProblemThree.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ProblemThreeOJVersion.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ProblemThreeOJVersionWithoutNotationSentences.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ProblemTwo.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ProblemTwoOJVersion.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ProblemTwoOJVersionWithoutNotationSentences.executor&quot;: &quot;Run&quot;,
+    &quot;Application.TheDaysBetweenYears.executor&quot;: &quot;Run&quot;,
+    &quot;Application.TheDaysBetweenYearsVersionTwo.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;T:/Code/Java/SUSTechCourse/CS109/Tutorial&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
-  <component name="RunManager">
+}</component>
+  <component name="RunManager" selected="Application.FindNumberOfCriticalNumbersUnderABound">
     <configuration name="FindNumberOfCriticalNumbersUnderABound" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="FindNumberOfCriticalNumbersUnderABound" />
       <module name="Assignment 1" />
@@ -111,6 +112,16 @@
       <workItem from="1709206622265" duration="434000" />
       <workItem from="1709207166043" duration="721000" />
       <workItem from="1709208186403" duration="8542000" />
+      <workItem from="1709219488109" duration="140000" />
+      <workItem from="1709219649505" duration="52000" />
+      <workItem from="1709279194892" duration="10000" />
+      <workItem from="1709292063340" duration="844000" />
+      <workItem from="1709441716745" duration="58000" />
+      <workItem from="1709442394433" duration="4000" />
+      <workItem from="1709442636927" duration="3000" />
+      <workItem from="1709618852179" duration="75000" />
+      <workItem from="1710209870947" duration="103000" />
+      <workItem from="1710212620811" duration="19000" />
     </task>
     <servers />
   </component>
