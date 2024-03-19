@@ -23,7 +23,8 @@ public class ExerciseFour {
         if (args[0] == "Invalid"){
             System.out.println("The process of the matrix multiplication is invalid!");
         } else {
-            System.out.println("The multiplication of all the matrix is " + Arrays.deepToString(currentMatrix));
+            System.out.println("The multiplication of all the matrix is: ");
+            PrintOut.Matrix(currentMatrix);
         }
     }
 }
