@@ -6,7 +6,7 @@ public class ProblemFourOJVersionWithoutNotationSentences {
     public static void main(String[] args) {
         Scanner fetch = new Scanner(System.in);
         String initialIntegerInString = fetch.next();
-        long segmentLength = fetch.nextInt();
+        int segmentLength = fetch.nextInt();
         int[] theCorrespondingArray = StringIntToArray(initialIntegerInString, segmentLength);
         int[] theCorrespondingArrayAfterReverse = ReverseAllTheIntegersInTheArray(theCorrespondingArray);
         int sumOfThePartsOfTheArray = SumUpTheArray(theCorrespondingArrayAfterReverse);
