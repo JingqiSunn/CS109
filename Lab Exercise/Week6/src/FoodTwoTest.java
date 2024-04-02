@@ -1,4 +1,4 @@
-public class FoodTwoTest {
+/*public class FoodTwoTest {
     public static void main(String[] args) {
         FoodTwo[] foodArray = new FoodTwo[4];
         for (int sequenceOfFood = 0; sequenceOfFood < 4; sequenceOfFood++) {
@@ -6,4 +6,4 @@ public class FoodTwoTest {
             foodArray[sequenceOfFood].getMenu();
         }
     }
-}
+}*/
