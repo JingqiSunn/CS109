@@ -28,5 +28,7 @@ public class FoodTest {
         for (int sequence = 0; sequence < 4; sequence++) {
             foodArray[sequence].getMenu();
         }
+        FoodTwo newFood = new FoodTwo(1,"pizza","Seafood",11,12);
+        System.out.println(newFood.typeMenu());
     }
 }

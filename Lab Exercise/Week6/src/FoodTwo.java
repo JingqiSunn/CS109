@@ -1,3 +1,5 @@
+import java.security.PublicKey;
+
 public class FoodTwo {
     private int id;
     private String name;
@@ -55,4 +57,9 @@ public class FoodTwo {
     public double GetPrice() {
         return price;
     }
+
+    public String typeMenu(){
+        return String.format("%s %s: (%d Inches) %.2f $\n", type, name, size, price * (double) 10);
+    }
 }
+
