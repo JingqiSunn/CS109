@@ -15,7 +15,7 @@ public class CircleTest {
 		Circle c2 = new Circle();
 		Circle c3 = new Circle(6.7);
 		Circle c4 = new Circle(2,0.1,2);
-		c1.setRadius();
+		c1.setRadius(3);
 		System.out.println(c1.getRadius());
 		ArrayList<Circle> circleList=new ArrayList<Circle>();
 		circleList.add(c1);
