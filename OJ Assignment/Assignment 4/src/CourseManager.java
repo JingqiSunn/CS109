@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Objects;
 
 public class CourseManager {
@@ -181,10 +182,10 @@ public class CourseManager {
                 }
             }
             int olderCreditOnThisCourse = courses.get(positionInTheCourseList).getCredits().get(sequenceInTheEnrollingStudent);
-            int currentUpperLimit=student.getCredits();
-            currentUpperLimit +=olderCreditOnThisCourse;
+            int currentUpperLimit = student.getCredits();
+            currentUpperLimit += olderCreditOnThisCourse;
             student.setCredits(currentUpperLimit);
-            ArrayList<Course> currentEnrollingCourseList = new ArrayList<>( student.getEnrollCourses());
+            ArrayList<Course> currentEnrollingCourseList = new ArrayList<>(student.getEnrollCourses());
             currentEnrollingCourseList.remove(sequenceInTheEnrollingCourse);
             student.setEnrollCourses(currentEnrollingCourseList);
             ArrayList<Student> currentEnrollingStudentsList = new ArrayList<>(courses.get(positionInTheCourseList).getEnrollStudent());
@@ -195,14 +196,74 @@ public class CourseManager {
         }
         return whetherValid;
     }
-    public void finalizeEnrollments(){
-        ifOpen=false;
+
+    public void finalizeEnrollments() {
+        ifOpen = false;
+        int realLowerBound = 7000;
         int numberOfTheTotalCourse = courses.size();
         for (int courseSequence = 0; courseSequence < numberOfTheTotalCourse; courseSequence++) {
-        ArrayList<Integer> whichOneIsSelected = new ArrayList<>(courses.get(courseSequence).getCredits().size());
-        
+            ArrayList<Integer> creditSequenceAfterSorting = new ArrayList<>(courses.get(courseSequence).getCredits());
+            Collections.sort(creditSequenceAfterSorting);
+            int potentialLowerBound = creditSequenceAfterSorting.get(courses.get(courseSequence).getMaxCapacity() - 1);
+            if (creditSequenceAfterSorting.get(courses.get(courseSequence).getMaxCapacity()) < potentialLowerBound) {
+                realLowerBound = potentialLowerBound;
+            } else {
+                for (int locationAtTheSortedSequence = courses.get(courseSequence).getMaxCapacity() - 2; locationAtTheSortedSequence > -1; locationAtTheSortedSequence--) {
+                    if (creditSequenceAfterSorting.get(locationAtTheSortedSequence) != potentialLowerBound) {
+                        realLowerBound = creditSequenceAfterSorting.get(locationAtTheSortedSequence);
+                        break;
+                    }
+                }
+            }
+            for (int theLocationInTheEnrollingList = 0; theLocationInTheEnrollingList < courses.get(courseSequence).getCredits().size(); theLocationInTheEnrollingList++) {
+                if(courses.get(courseSequence).getCredits().get(theLocationInTheEnrollingList)>= realLowerBound){
+                   ArrayList<Student> currentSuccessfulStudents=new ArrayList<>(courses.get(courseSequence).getSuccessStudents())    ;
+                   currentSuccessfulStudents.add(courses.get(courseSequence).getEnrollStudent().get(theLocationInTheEnrollingList));
+                   courses.get(courseSequence).setSuccessStudents(currentSuccessfulStudents);
+                   String IDNumberForSuccessfulStudent = courses.get(courseSequence).getEnrollStudent().get(theLocationInTheEnrollingList).getStudentID();
+                   int theSequenceOfStudent=0 ;
+                    for (int currentSequenceOfStudent = 0; currentSequenceOfStudent < students.size(); currentSequenceOfStudent++) {
+                        if(IDNumberForSuccessfulStudent.equals(students.get(currentSequenceOfStudent).getStudentID())){
+                            theSequenceOfStudent = currentSequenceOfStudent;
+                            break;
+                        }
+                    }
+                   ArrayList<Course> currentSuccessfulCourse = new ArrayList<>(students.get(theSequenceOfStudent).getSuccessCourses());
+                    currentSuccessfulCourse.add(courses.get(courseSequence));
+                    students.get(theSequenceOfStudent).setSuccessCourses(currentSuccessfulCourse);
+                }
+            }
         }
     }
+    public ArrayList<String> getEnrolledCoursesWithCredits(Student student){
+        if(ifOpen==false){
+            return null;
+        } else {
+            ArrayList<String> courseAndCredit=new ArrayList<>();
+            for (int locationAtEnrollingCourse = 0; locationAtEnrollingCourse < student.getEnrollCourses().size(); locationAtEnrollingCourse++) {
+                Course theTargetCourse = student.getEnrollCourses().get(locationAtEnrollingCourse);
+                String studentID = student.getStudentID();
+                String courseID = theTargetCourse.getCourseID();
+                int locationAtCoursesList=0;
+                int theCreditStudentPutInForThatCourse = 0;
+                for (int currentLocationAtCoursesList = 0; currentLocationAtCoursesList < courses.size(); currentLocationAtCoursesList++) {
+                    if(courseID.equals(courses.get(currentLocationAtCoursesList).getCourseID())){
+                        locationAtCoursesList = currentLocationAtCoursesList;
+                        break;
+                    }
+                }
+                for (int locationAtEnrollingStudents = 0; locationAtEnrollingStudents < courses.get(locationAtCoursesList).getEnrollStudent().size(); locationAtEnrollingStudents++) {
+                    if(studentID.equals(courses.get(locationAtCoursesList).getEnrollStudent().get(locationAtEnrollingStudents))){
+                        theCreditStudentPutInForThatCourse = courses.get(locationAtCoursesList).getCredits().get(locationAtEnrollingStudents);
+                    }
+                }
+                courseAndCredit.add(String.format("%s:%int",courseID,theCreditStudentPutInForThatCourse));
+            }
+            return courseAndCredit;
+        }
+
+    }
+
 }
 
 
