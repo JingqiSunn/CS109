@@ -11,6 +11,7 @@ public class CourseManager {
     public CourseManager() {
         courses = new ArrayList<>();
         students = new ArrayList<>();
+        ifOpen = true;
     }
 
     public void setIfOpen(boolean ifOpen) {
@@ -30,13 +31,15 @@ public class CourseManager {
     }
 
     public void addCourse(Course course) {
+        if(course.getMaxCapacity()>0){
         courses.add(course);
-        course.setCourseManager(this);
+        course.setCourseManager(this);}
     }
 
     public void addStudent(Student student) {
+        if(student.getCredits()>=0){
         students.add(student);
-        student.setCourseManager(this);
+        student.setCourseManager(this);}
     }
 
     public boolean enrollStudentInCourse(Student student, String courseId, int credits) {
@@ -86,6 +89,7 @@ public class CourseManager {
         return whetherValid;
     }
 
+
     public boolean modifyStudentEnrollmentCredits(Student student, String courseId, int credits) {
         boolean whetherValid = true;
         int numberOfTheTotalCourse = courses.size();
@@ -111,7 +115,7 @@ public class CourseManager {
             for (int positionInTheEnrolledStudentList = 0; positionInTheEnrolledStudentList < numberOfTheStudentsEnrolledInThisCourse; positionInTheEnrolledStudentList++) {
                 if (student.getStudentID().equals(courses.get(positionInTheCourseList).getEnrollStudent().get(positionInTheEnrolledStudentList).getStudentID())) {
                     whetherTrueHere = true;
-                    sequenceInTheEnrollingStudent = positionInTheCourseList;
+                    sequenceInTheEnrollingStudent = positionInTheEnrolledStudentList;
                     break;
                 }
             }
@@ -169,7 +173,7 @@ public class CourseManager {
             for (int positionInTheEnrolledStudentList = 0; positionInTheEnrolledStudentList < numberOfTheStudentsEnrolledInThisCourse; positionInTheEnrolledStudentList++) {
                 if (student.getStudentID().equals(courses.get(positionInTheCourseList).getEnrollStudent().get(positionInTheEnrolledStudentList).getStudentID())) {
                     whetherTrueHere = true;
-                    sequenceInTheEnrollingStudent = positionInTheCourseList;
+                    sequenceInTheEnrollingStudent = positionInTheEnrolledStudentList;
                     break;
                 }
             }
@@ -179,7 +183,7 @@ public class CourseManager {
             String specificCourseID = courses.get(positionInTheCourseList).getCourseID();
             int lengthOfTheEnrollingCourse = student.getEnrollCourses().size();
             for (sequenceInTheEnrollingCourse = 0; sequenceInTheEnrollingCourse < lengthOfTheEnrollingCourse; sequenceInTheEnrollingCourse++) {
-                if (student.getEnrollCourses().get(sequenceInTheEnrollingCourse).equals(specificCourseID)) {
+                if (student.getEnrollCourses().get(sequenceInTheEnrollingCourse).getCourseID().equals(specificCourseID)) {
                     break;
                 }
             }
@@ -195,6 +199,7 @@ public class CourseManager {
             courses.get(positionInTheCourseList).setEnrollStudent(currentEnrollingStudentsList);
             ArrayList<Integer> currentCreditsList = new ArrayList<>(courses.get(positionInTheCourseList).getCredits());
             currentCreditsList.remove(sequenceInTheEnrollingStudent);
+            courses.get(positionInTheCourseList).setCredits(currentCreditsList);
         }
         return whetherValid;
     }
@@ -204,8 +209,15 @@ public class CourseManager {
         int realLowerBound = 7000;//set a fake upperbound
         int numberOfTheTotalCourse = courses.size();
         for (int courseSequence = 0; courseSequence < numberOfTheTotalCourse; courseSequence++) {//set successful list for every course
+            if(courses.get(courseSequence).getEnrollStudent().isEmpty()){
+                continue;
+            }
             ArrayList<Integer> creditSequenceAfterSorting = new ArrayList<>(courses.get(courseSequence).getCredits());//get the original credits list for the course
             Collections.sort(creditSequenceAfterSorting, Collections.reverseOrder());//sort the credits from bigger to smaller
+            if (courses.get(courseSequence).getEnrollStudent().size()<= courses.get(courseSequence).getMaxCapacity()){
+                Collections.sort(creditSequenceAfterSorting);
+                realLowerBound = creditSequenceAfterSorting.get(0);
+            } else{
             int potentialLowerBound = creditSequenceAfterSorting.get(courses.get(courseSequence).getMaxCapacity() - 1);
             if (creditSequenceAfterSorting.get(courses.get(courseSequence).getMaxCapacity()) < potentialLowerBound) {
                 realLowerBound = potentialLowerBound;
@@ -216,10 +228,11 @@ public class CourseManager {
                         break;
                     }
                 }
-            }
+            }}
             for (int theLocationInTheEnrollingList = 0; theLocationInTheEnrollingList < courses.get(courseSequence).getCredits().size(); theLocationInTheEnrollingList++) {
+                ArrayList<Student> currentSuccessfulStudents = new ArrayList<>(courses.get(courseSequence).getSuccessStudents());
                 if (courses.get(courseSequence).getCredits().get(theLocationInTheEnrollingList) >= realLowerBound) {
-                    ArrayList<Student> currentSuccessfulStudents = new ArrayList<>(courses.get(courseSequence).getSuccessStudents());
+
                     currentSuccessfulStudents.add(courses.get(courseSequence).getEnrollStudent().get(theLocationInTheEnrollingList));
                     courses.get(courseSequence).setSuccessStudents(currentSuccessfulStudents);
                     String IDNumberForSuccessfulStudent = courses.get(courseSequence).getEnrollStudent().get(theLocationInTheEnrollingList).getStudentID();
@@ -256,11 +269,11 @@ public class CourseManager {
                     }
                 }
                 for (int locationAtEnrollingStudents = 0; locationAtEnrollingStudents < courses.get(locationAtCoursesList).getEnrollStudent().size(); locationAtEnrollingStudents++) {
-                    if (studentID.equals(courses.get(locationAtCoursesList).getEnrollStudent().get(locationAtEnrollingStudents))) {
+                    if (studentID.equals(courses.get(locationAtCoursesList).getEnrollStudent().get(locationAtEnrollingStudents).getStudentID())) {
                         theCreditStudentPutInForThatCourse = courses.get(locationAtCoursesList).getCredits().get(locationAtEnrollingStudents);
                     }
                 }
-                courseAndCredit.add(String.format("%s:%int", courseID, theCreditStudentPutInForThatCourse));
+                courseAndCredit.add(String.format("%s: %d", courseID, theCreditStudentPutInForThatCourse));
             }
             return courseAndCredit;
         }
