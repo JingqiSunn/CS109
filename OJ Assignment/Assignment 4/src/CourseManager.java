@@ -200,12 +200,12 @@ public class CourseManager {
     }
 
     public void finalizeEnrollments() {
-        ifOpen = false;
-        int realLowerBound = 7000;
+        ifOpen = false;//close the selecting period
+        int realLowerBound = 7000;//set a fake upperbound
         int numberOfTheTotalCourse = courses.size();
-        for (int courseSequence = 0; courseSequence < numberOfTheTotalCourse; courseSequence++) {
-            ArrayList<Integer> creditSequenceAfterSorting = new ArrayList<>(courses.get(courseSequence).getCredits());
-            Collections.sort(creditSequenceAfterSorting);
+        for (int courseSequence = 0; courseSequence < numberOfTheTotalCourse; courseSequence++) {//set successful list for every course
+            ArrayList<Integer> creditSequenceAfterSorting = new ArrayList<>(courses.get(courseSequence).getCredits());//get the original credits list for the course
+            Collections.sort(creditSequenceAfterSorting, Collections.reverseOrder());//sort the credits from bigger to smaller
             int potentialLowerBound = creditSequenceAfterSorting.get(courses.get(courseSequence).getMaxCapacity() - 1);
             if (creditSequenceAfterSorting.get(courses.get(courseSequence).getMaxCapacity()) < potentialLowerBound) {
                 realLowerBound = potentialLowerBound;
