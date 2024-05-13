@@ -7,6 +7,15 @@ public class Circle extends Shape {
         numberOfFilledGrids = 0;
         this.fillGrids();
     }
+
+    public int getRadius() {
+        return radius;
+    }
+
+    public int getNumberOfFilledGrids() {
+        return numberOfFilledGrids;
+    }
+
     public void fillGrids(){
         grids = new char[radius*2][radius*2];
         this.fillGridsWithBlank();
